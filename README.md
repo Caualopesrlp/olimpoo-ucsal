@@ -1,29 +1,26 @@
-# OlimPOO
+# 🏆 OlimPOO — Sistema de Gestão de Olimpíadas Acadêmicas
 
-Código-base monolítico para a primeira aula de Programação Orientada a Objetos Avançada.
+> **Projeto da disciplina Programação Orientada a Objetos Avançada (UCSal)**  
+> **Professor:** [Mário Jorge Pereira](https://github.com/mariojp)
 
-O programa registra alunos, olimpíadas, participações e resultados oficiais. Ele já funciona, mas concentra entrada, validação, armazenamento, coordenação, formatação e comunicação na classe `OlimPOOConsole`.
+---
 
-## Requisitos
-- JDK 17 ou superior.
+## 📌 Nota sobre o Histórico de Commits
 
-## Execução pelo terminal
+Como o desenvolvimento e as refatorações foram realizados localmente antes do envio ao GitHub, o histórico de commits do repositório contém apenas a transição direta do código legado original para a versão atual refatorada.
 
-macOS/Linux:
+---
 
-```bash
-chmod +x executar.sh
-./executar.sh
-```
+## 🛠️ Estrutura Atual do Projeto
 
-Windows:
+O código atual está organizado em uma **Arquitetura em Camadas** com separação clara de responsabilidades:
 
-```bat
-executar.bat
-```
-
-Pela IDE, execute `br.edu.ucsal.olimpoo.OlimPOOConsole`.
-
-## Dados iniciais
-
-O programa inicia com um aluno, uma olimpíada, uma participação e um resultado oficial para facilitar a demonstração. Os resultados são registrados conforme a fonte oficial informada; o OlimPOO não calcula premiações.
+```text
+br.edu.ucsal.olimpoo
+├── domain/                      # Entidades do Domínio (Aluno, Olimpiada, etc.)
+├── repository/                  # Interfaces de Persistência e Implementações em Memória
+├── service/                     # Camada de Negócio e Conversão (Services)
+│   └── dto/                     # Data Transfer Objects (DTOs)
+├── config/                      # Carga de dados demonstrativos (LoadData)
+├── OlimPOOApp.java              # Main e Bootstrapping (Injeção de Dependências)
+└── OlimPOOConsole.java          # Interface de Apresentação (View)
